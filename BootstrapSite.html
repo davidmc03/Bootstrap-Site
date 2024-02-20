@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>LetterBox - Your Mailbox Solution</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        body {
+            padding-top: 60px;
+            margin: 0;
+            overflow-x: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navbar {
+            background-color: #3498db;
+            border-bottom: 1px solid #2c3e50;
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #ffffff !important;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #ffffff;
+        }
+
+        .container {
+            padding: 0;
+        }
+
+        .about-us-section {
+            background-color: #afdfff;
+            color: #ffffff;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .notifications-section {
+            background-color: #fafafa;
+            color: #000000;
+            padding: 20px;
+            position: fixed;
+            top: 20;
+            right: 0;
+            height: 500px;
+            width: 20%;
+            z-index: 1;
+        }
+
+        .scroll-section {
+            color: #000000;
+            padding: 20px;
+            position: fixed;
+            top: 20;
+            left: 0;
+            height: 400px;
+            width: calc(100% - 30%);
+            margin-right: 30%;
+            z-index: 1;
+        }
+
+        .notifications-section h3,
+        .scroll-section h6,
+        .about-us-section h6 {
+            color: #000000;
+        }
+
+        .message {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Additional styles for the header image */
+        header {
+            text-align: center;
+        }
+
+        header img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Styles for the Sign Up form */
+        .signup-form {
+            margin-top: 20px;
+        }
+
+        .signup-form label {
+            display: block;
+        }
+
+        .signup-form input,
+        .signup-form button {
+            margin-bottom: 10px;
+        }
+
+        .signup-form label,
+        .signup-form input,
+        .signup-form button {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="https://admissions.charlotte.edu/wp-content/uploads/sites/667/2023/08/1500x500-600x200.jpeg"
+            alt="Header Image" class="img-fluid" style="height: 250px;">
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">LetterBox</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inbox</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Request
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Internship</a>
+                        <a class="dropdown-item" href="#">Graduate</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Job Application</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Notification Section -->
+    <div class="Notifications">
+        <section class="notifications-section">
+            <h3>Notifications</h3>
+            <p class="message">Professor Johnson received your request.</p>
+            <p class="message">Professor Richard completed your request.</p>
+            <p class="message">Professor Jimmy denied your request.</p>
+            <p class="message">Professor Willy denied your request.</p>
+        </section>
+    </div>
+
+    <!-- Scroll Section with Sign Up Form -->
+    <div class="scroll-section">
+        <h6>Sign Up</h6>
+        <form class="signup-form" onsubmit="submitForm(event)">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="userType">User Type:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="userType" value="student" checked>
+                        <label class="form-check-label">Student</label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="Contact Us">
+        <section class="about-us-section">
+            <div class="container">
+                <h6>Contact/About Us</h6>
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="mailto:info@letterbox.com" class="btn btn-primary btn-block">Email Us</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="tel:+1234567890" class="btn btn-success btn-block">Call Us</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="https://www.example.com" target="_blank"
+                            class="btn btn-info btn-block">Visit Our Website</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Home Section -->
+
+    <!-- Add Bootstrap JS and Popper.js scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            var email = document.getElementById('email').value;
+            var userType = document.querySelector('input[name="userType"]:checked').value;
+            alert('Form submitted with email: ' + email + ', UserType: ' + userType);
+        }
+    </script>
+</body>
+
+</html>
